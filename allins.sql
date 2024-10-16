@@ -1,0 +1,10 @@
+CREATE TABLE clientes (
+  id SERIAL PRIMARY KEY,
+  nome VARCHAR(100) NOT NULL,
+  email VARCHAR(100) UNIQUE NOT NULL,
+  telefone VARCHAR(20),
+  endereco TEXT,
+  data_cadastro TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+SELECT * FROM clientes;
