@@ -1,3 +1,35 @@
+<?php
+require_once 'conectaBD.php';
+
+session_start();
+
+if (empty($_SESSION)) {
+  // Significa que as variáveis de SESSAO não foram definidas.
+  // Não poderia acessar aqui.
+  header("Location: login.php?msgErro=Você precisa se autenticar no sistema.");
+  die();
+}
+
+/*
+echo "Estou logado";
+echo '<pre>';
+print_r($_SESSION);
+echo '</pre>';
+die();
+*/
+
+
+/*
+echo '<pre>';
+print_r($anuncios);
+echo '</pre>';
+die();
+*/
+
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -9,6 +41,19 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
+	<div class="container">
+		<?php if (!empty($_GET['msgErro'])) { ?>
+		  <div class="alert alert-warning" role="alert">
+			<?php echo $_GET['msgErro']; ?>
+		  </div>
+		<?php } ?>
+  
+		<?php if (!empty($_GET['msgSucesso'])) { ?>
+		  <div class="alert alert-success" role="alert">
+			<?php echo $_GET['msgSucesso']; ?>
+		  </div>
+		<?php } ?>
+	  </div>
 	<div class="header">
 		<div class="linha">
 			<header>
@@ -18,13 +63,13 @@
 				<div class="coluna col8">
 					<nav>
 						<ul class="menu inline sem-marcador">
-							<li><a href="index.html">home</a></li>
-							<li><a href="turismo.html">Turismo</a></li>
-							<li><a href="lojas.html">lojas</a></li>
-							<li><a href="sobre.html">sobre</a></li>
-							<li><a href="contato.html">contato</a></li>
-							<li><a href="ativos.html">ativos</a></li>
-							<li><a href="login.html">login</a></li>
+							<li><a href="index.php">home</a></li>
+							<li><a href="turismo.php">turismo</a></li>
+							<li><a href="lojas.php">lojas</a></li>
+							<li><a href="sobre.php">sobre</a></li>
+							<li><a href="contato.php">contato</a></li>
+							<li><a href="ativos.php">ativos</a></li>
+							<li><a href="login.php">login</a></li>
 						</ul>
 					</nav>
 				</div>
@@ -33,38 +78,23 @@
 	</div>
 	<div class="linha">
 		<section>
-			<div class="coluna col5 sidebar">
-				<h3>Localização</h3>
-				<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d117636.3063597978!2d-42.52427705!3d-22.871486649999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x975e1971d0baa7%3A0x85c6ef0e0cc50317!2sSaquarema%2C%20RJ%2C%2028990-000!5e0!3m2!1spt-BR!2sbr!4v1700683938307!5m2!1spt-BR!2sbr" width="350" height="390" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-				<ul class="sem-padding sem-marcador">
-					<li>Praça Nossa Sra. de Nazaré, 42 - Centro</li>
-					<li>Saquarema - RJ</li>
-				</ul>
-				<h3>Contato direto</h3>
-				<ul class="sem-padding sem-marcador">
-					<li>Fone: <strong>(00) 0000-0000</strong></li>
-					<li>Email: <strong>contato@allinsaqua.com</strong></li>
-					<li>Skipe: <strong>login.login</strong></li>
-				</ul>
-			</div>
-			<div class="coluna col7 contato">
-				<h2>Envie sua mensagem</h2>
-				<form action="">
-					<label for="nome">Seu nome:</label>
-					<input type="text" name="nome" placeholder="Digite seu Nome" id="nome" />
-					<label for="email">Seu email:</label>
-					<input type="text" name="email" placeholder="Digite seu E-mail" id="email" />
-					<label for="assunto">Assunto:</label>
-					<input type="text" name="assunto" placeholder="Assunto" id="assunto" />
-					<label for="mensagem">Mensagem:</label>
-					<textarea name="mensagem" placeholder="Digite... " id="mensagem"></textarea>
-					<input type="submit" class="botao" name="enviar" value="Enviar mensagem &raquo;" />
-				</form>			
-			</div>
+			<div class="coluna col4 sidebar">
+				
+			<!--<div class="coluna col8">-->
+			<div class="container">
+      			<div class="coluna col8">
+        		<h2 class="title">Olá <i><?php echo $_SESSION['nome']; ?></i>, seja bem-vindo(a)!</h2>
+      			</div>
+   			</div>
+
+			<div class="container">
+			<a href="logout.php" class="btn btn-dark">Sair</a>
+			</div>	
+
+			<!--</div>-->
 		</section>
 	</div>
 	
-	</div>
 	<footer>
 		<div id="footer_content">
 			<div id="footer_contacts">

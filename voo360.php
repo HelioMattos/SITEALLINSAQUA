@@ -1,3 +1,5 @@
+<?php include 'header.php'; ?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -18,13 +20,13 @@
 				<div class="coluna col8">
 					<nav>
 						<ul class="menu inline sem-marcador">
-							<li><a href="index.html">home</a></li>
-							<li><a href="turismo.html">turismo</a></li>
-							<li><a href="servicos.html">serviços</a></li>
-							<li><a href="sobre.html">sobre</a></li>
-							<li><a href="contato.html">contato</a></li>
-							<li><a href="ativos.html">ativos</a></li>
-							<li><a href="login.html">login</a></li>
+							<li><a href="index.php">home</a></li>
+							<li><a href="turismo.php">turismo</a></li>
+							<li><a href="servicos.php">serviços</a></li>
+							<li><a href="sobre.php">sobre</a></li>
+							<li><a href="contato.php">contato</a></li>
+							<li><a href="ativos.php">ativos</a></li>
+							<li><a href="login.php">login</a></li>
 						</ul>
 					</nav>
 				</div>

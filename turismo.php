@@ -1,3 +1,5 @@
+<?php include 'header.php'; ?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -18,13 +20,13 @@
 				<div class="coluna col8">
 					<nav>
 						<ul class="menu inline sem-marcador">
-							<li><a href="index.html">home</a></li>
-							<li><a href="turismo.html">Turismo</a></li>
-							<li><a href="lojas.html">lojas</a></li>
-							<li><a href="sobre.html">sobre</a></li>
-							<li><a href="contato.html">contato</a></li>
-							<li><a href="ativos.html">ativos</a></li>
-							<li><a href="login.html">login</a></li>
+							<li><a href="index.php">home</a></li>
+							<li><a href="turismo.php">Turismo</a></li>
+							<li><a href="lojas.php">lojas</a></li>
+							<li><a href="sobre.php">sobre</a></li>
+							<li><a href="contato.php">contato</a></li>
+							<li><a href="ativos.php">ativos</a></li>
+							<li><a href="login.php">login</a></li>
 						</ul>
 					</nav>
 				</div>
@@ -37,7 +39,7 @@
 
 			<div class="pacotes-cards">
 			  <div class="card">
-				<a href="igreja.html">
+				<a href="igreja.php">
 				<div class="card-tag card-tag-top">
 				  <p>360°</p>
 				</div>
@@ -57,7 +59,7 @@
 
 			  <div class="pacotes-cards">
 				<div class="card">
-				  <a href="voo.html">
+				  <a href="voo.php">
 				  <div class="card-tag card-tag-top">
 					<p>360°</p>
 				  </div>
@@ -80,7 +82,7 @@
 
 			<div class="pacotes-cards">
 				<div class="card">
-				  <a href="sambaquis.html">
+				  <a href="sambaquis.php">
 				  <div class="card-tag card-tag-top">
 					<p>360°</p>
 				  </div>
@@ -100,7 +102,7 @@
 			</div>
 			<div class="pacotes-cards">
 				<div class="card">
-				  <a href="mirante.html">
+				  <a href="mirante.php">
 				  <div class="card-tag card-tag-top">
 					<p>360°</p>
 				  </div>
@@ -121,7 +123,7 @@
 			
 			<div class="pacotes-cards">
 				<div class="card">
-				  <a href="gruta.html">
+				  <a href="gruta.php">
 				  <div class="card-tag card-tag-top">
 					<p>360°</p>
 				  </div>
@@ -142,12 +144,12 @@
 				<div class="pacotes-cards">
 					<div class="card">
 					  <div class="card-tag card-tag-top">
-						<a href="veu360.html">
+						<a href="veu360.php">
 						<p>360°</p>
 						</a>
 					  </div>
 					  <div class="card-tag card-tag-bottom">
-						<a href="veu.html">
+						<a href="veu.php">
 						<p>Cachoeira Véu da Noiva</p>
 						</a>
 					  </div>

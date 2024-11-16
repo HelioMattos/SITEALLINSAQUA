@@ -1,3 +1,4 @@
+<?php include 'header.php'; ?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -18,13 +19,13 @@
 				<div class="coluna col8">
 					<nav>
 						<ul class="menu inline sem-marcador">
-							<li><a href="index.html">home</a></li>
-							<li><a href="turismo.html">turismo</a></li>
-							<li><a href="lojas.html">lojas</a></li>
-							<li><a href="sobre.html">sobre</a></li>
-							<li><a href="contato.html">contato</a></li>
-							<li><a href="ativos.html">ativos</a></li>
-							<li><a href="login.html">login</a></li>
+							<li><a href="index.php">home</a></li>
+							<li><a href="turismo.php">Turismo</a></li>
+							<li><a href="lojas.php">lojas</a></li>
+							<li><a href="sobre.php">sobre</a></li>
+							<li><a href="contato.php">contato</a></li>
+							<li><a href="ativos.php">ativos</a></li>
+							<li><a href="login.php">login</a></li>
 						</ul>
 					</nav>
 				</div>
@@ -33,28 +34,38 @@
 	</div>
 	<div class="linha">
 		<section>
-			<div class="coluna col4 sidebar">
-				
+			<div class="coluna col5 sidebar">
+				<h3>Localização</h3>
+				<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d117636.3063597978!2d-42.52427705!3d-22.871486649999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x975e1971d0baa7%3A0x85c6ef0e0cc50317!2sSaquarema%2C%20RJ%2C%2028990-000!5e0!3m2!1spt-BR!2sbr!4v1700683938307!5m2!1spt-BR!2sbr" width="350" height="390" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+				<ul class="sem-padding sem-marcador">
+					<li>Praça Nossa Sra. de Nazaré, 42 - Centro</li>
+					<li>Saquarema - RJ</li>
+				</ul>
+				<h3>Contato direto</h3>
+				<ul class="sem-padding sem-marcador">
+					<li>Fone: <strong>(00) 0000-0000</strong></li>
+					<li>Email: <strong>contato@allinsaqua.com</strong></li>
+					<li>Skipe: <strong>login.login</strong></li>
+				</ul>
 			</div>
-			<!--<div class="coluna col8">-->
-				<div class="login-container">
-					<h1>Login</h1>
-					<form action="conectaBD.php" method="post">
-						<label for="username">Usuário:</label>
-						<input type="text" id="username" name="username" required>
-			
-						<label for="password">Senha:</label>
-						<input type="password" id="password" name="password" required>
-			
-						<div class="button-container">
-							<input type="submit" value="Entrar">
-							<a href="cadastro.html" class="button">Cadastrar</a>
-						</div>
-
-			<!--</div>-->
+			<div class="coluna col7 contato">
+				<h2>Envie sua mensagem</h2>
+				<form action="">
+					<label for="nome">Seu nome:</label>
+					<input type="text" name="nome" placeholder="Digite seu Nome" id="nome" />
+					<label for="email">Seu email:</label>
+					<input type="text" name="email" placeholder="Digite seu E-mail" id="email" />
+					<label for="assunto">Assunto:</label>
+					<input type="text" name="assunto" placeholder="Assunto" id="assunto" />
+					<label for="mensagem">Mensagem:</label>
+					<textarea name="mensagem" placeholder="Digite... " id="mensagem"></textarea>
+					<input type="submit" class="botao" name="enviar" value="Enviar mensagem &raquo;" />
+				</form>			
+			</div>
 		</section>
 	</div>
 	
+	</div>
 	<footer>
 		<div id="footer_content">
 			<div id="footer_contacts">

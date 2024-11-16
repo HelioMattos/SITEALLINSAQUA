@@ -1,3 +1,5 @@
+<?php include 'header.php'; ?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -18,13 +20,13 @@
 				<div class="coluna col8">
 					<nav>
 						<ul class="menu inline sem-marcador">
-							<li><a href="index.html">home</a></li>
-							<li><a href="turismo.html">turismo</a></li>
-							<li><a href="servicos.html">serviços</a></li>
-							<li><a href="sobre.html">sobre</a></li>
-							<li><a href="contato.html">contato</a></li>
-							<li><a href="ativos.html">ativos</a></li>
-							<li><a href="login.html">login</a></li>
+							<li><a href="index.php">home</a></li>
+							<li><a href="turismo.php">turismo</a></li>
+							<li><a href="lojas.php">lojas</a></li>
+							<li><a href="sobre.php">sobre</a></li>
+							<li><a href="contato.php">contato</a></li>
+							<li><a href="ativos.php">ativos</a></li>
+							<li><a href="login.php">login</a></li>
 						</ul>
 					</nav>
 				</div>
@@ -32,35 +34,58 @@
 		</div>
 	</div>
 	<div class="linha">
-		<section>
-			<div class="coluna col8">
-				<h1>Mirante do Morro da Cruz</h1>
-            <img class="card-image" src="img/mirante.jpg" alt="Imagem do Mirante do Morro da Cruz">
-            <div class="content">
-                <h2>Sobre o Mirante</h2>
-                <p>
-                    O Mirante do Morro da Cruz é um dos pontos turísticos mais procurados de Saquarema. 
-                    Localizado em uma região de fácil acesso, oferece uma vista incrível da Lagoa de Saquarema 
-                    e do litoral, tornando-se o local perfeito para apreciar o pôr-do-sol ou tirar fotografias.
-                </p>
-                <p>
-                    Além da paisagem, o local proporciona uma sensação de tranquilidade e conexão com a natureza, 
-                    sendo ideal para visitantes que buscam relaxamento e um contato mais próximo com o meio ambiente.
-                </p>
-                <h2>O que esperar</h2>
-                <ul>
-                    <li>Vista panorâmica da Lagoa de Saquarema e do oceano.</li>
-                    <li>Local ideal para fotos e filmagens.</li>
-                    <li>Excelente ponto para observar o pôr-do-sol.</li>
-                </ul>
-                <p>
-                    Não deixe de visitar o Mirante em sua próxima passagem por Saquarema e aproveitar o cenário único que ele oferece.
-                </p>
-            </div>
-				
-				
-			</div>
-		</section>
+				<section id="pacotes" class="pacotes">
+					<h2>Estabelecimentos</h2>
+					<div class="pacotes-cards">
+						<div class="card">
+							<img class="card-image" src="img/padariap.jpg" alt="Padaria da Ponte">
+							<h3>Hambúrguer Artesanal</h3>
+							<p>Pão artesanal, carne bovina suculenta, alface, tomate, queijo e molho especial.</p>
+						</div>
+			
+						<!-- Item 2 -->
+						<div class="card">
+							<img class="card-image" src="img/drogariaa.jpg" alt="Drogarias Alexandre">
+							<h3>Drogarias Alexandre</h3>
+							<p>Massa crocante, calabresa defumada, cebola e bastante queijo.</p>
+	
+						</div>
+			
+						<!-- Item 3 -->
+						<div class="card">
+							<img class="card-image" src="img/pastel.jpg" alt="Pastel de Carne">
+							<h3>Pastel de Carne</h3>
+							<p>Pastel recheado com carne temperada, frito na hora e crocante.</p>
+							
+						</div>
+			
+						<!-- Item 4 -->
+						<div class="card">
+							<img class="card-image" src="img/açaí.jpg" alt="Açaí na Tigela">
+							<h3>Açaí na Tigela</h3>
+							<p>Açaí puro com granola, banana e mel. Refrescante e delicioso!</p>
+							
+						</div>
+			
+						<!-- Item 5 -->
+						<div class="card">
+							<img class="card-image" src="img/suco.jpg" alt="Suco Natural de Laranja">
+							<h3>Suco Natural de Laranja</h3>
+							<p>Suco fresco feito com laranjas selecionadas. Perfeito para acompanhar sua refeição.</p>
+							
+						</div>
+
+						<!-- Item 6 -->
+						<div class="card">
+							<img class="card-image" src="img/açaí.jpg" alt="Açaí na Tigela">
+							<h3>Açaí na Tigela</h3>
+							<p>Açaí puro com granola, banana e mel. Refrescante e delicioso!</p>
+							
+						</div>
+
+					</div>
+				</section>
+
 	</div>
 	
 	<footer>

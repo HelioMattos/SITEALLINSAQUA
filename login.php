@@ -9,6 +9,19 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
+	<div class="container">
+		<?php if (!empty($_GET['msgErro'])) { ?>
+		  <div class="alert alert-warning" role="alert">
+			<?php echo $_GET['msgErro']; ?>
+		  </div>
+		<?php } ?>
+  
+		<?php if (!empty($_GET['msgSucesso'])) { ?>
+		  <div class="alert alert-success" role="alert">
+			<?php echo $_GET['msgSucesso']; ?>
+		  </div>
+		<?php } ?>
+	  </div>
 	<div class="header">
 		<div class="linha">
 			<header>
@@ -18,13 +31,13 @@
 				<div class="coluna col8">
 					<nav>
 						<ul class="menu inline sem-marcador">
-							<li><a href="index.html">home</a></li>
-							<li><a href="turismo.html">turismo</a></li>
-							<li><a href="servicos.html">serviços</a></li>
-							<li><a href="sobre.html">sobre</a></li>
-							<li><a href="contato.html">contato</a></li>
-							<li><a href="ativos.html">ativos</a></li>
-							<li><a href="login.html">login</a></li>
+							<li><a href="index.php">home</a></li>
+							<li><a href="turismo.php">turismo</a></li>
+							<li><a href="lojas.php">lojas</a></li>
+							<li><a href="sobre.php">sobre</a></li>
+							<li><a href="contato.php">contato</a></li>
+							<li><a href="ativos.php">ativos</a></li>
+							<li><a href="login.php">login</a></li>
 						</ul>
 					</nav>
 				</div>
@@ -33,33 +46,26 @@
 	</div>
 	<div class="linha">
 		<section>
-			<div class="coluna col8">
-				<h1>Mirante do Morro da Cruz</h1>
-            <img class="card-image" src="img/mirante.jpg" alt="Imagem do Mirante do Morro da Cruz">
-            <div class="content">
-                <h2>Sobre o Mirante</h2>
-                <p>
-                    O Mirante do Morro da Cruz é um dos pontos turísticos mais procurados de Saquarema. 
-                    Localizado em uma região de fácil acesso, oferece uma vista incrível da Lagoa de Saquarema 
-                    e do litoral, tornando-se o local perfeito para apreciar o pôr-do-sol ou tirar fotografias.
-                </p>
-                <p>
-                    Além da paisagem, o local proporciona uma sensação de tranquilidade e conexão com a natureza, 
-                    sendo ideal para visitantes que buscam relaxamento e um contato mais próximo com o meio ambiente.
-                </p>
-                <h2>O que esperar</h2>
-                <ul>
-                    <li>Vista panorâmica da Lagoa de Saquarema e do oceano.</li>
-                    <li>Local ideal para fotos e filmagens.</li>
-                    <li>Excelente ponto para observar o pôr-do-sol.</li>
-                </ul>
-                <p>
-                    Não deixe de visitar o Mirante em sua próxima passagem por Saquarema e aproveitar o cenário único que ele oferece.
-                </p>
-            </div>
-				
-				
+			<div class="coluna col4 sidebar">
+			<!--processa_login-->
 			</div>
+			<!--<div class="coluna col8">-->
+				<div class="login-container">
+					<h1>Login</h1>
+
+					<form action="teste.php" method="post">
+						<label for="username">E-mail:</label>
+						<input type="text" id="username" name="username">
+			
+						<label for="password">Senha:</label>
+						<input type="password" id="password" name="password">
+			
+						<div class="button-container">
+							<input type="submit" value="Entrar">
+							<a href="cadastro.php" class="button">Cadastrar</a>
+						</div>
+
+			<!--</div>-->
 		</section>
 	</div>
 	

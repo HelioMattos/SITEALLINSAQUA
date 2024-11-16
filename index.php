@@ -1,3 +1,5 @@
+<?php include 'header.php'; ?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -22,13 +24,13 @@
 				<div class="coluna col8">
 					<nav>
 						<ul class="menu inline sem-marcador">
-							<li><a href="index.html">home</a></li>
-							<li><a href="turismo.html">Turismo</a></li>
-							<li><a href="lojas.html">lojas</a></li>
-							<li><a href="sobre.html">sobre</a></li>
-							<li><a href="contato.html">contato</a></li>
-							<li><a href="ativos.html">ativos</a></li>
-							<li><a href="login.html">login</a></li>
+							<li><a href="index.php">home</a></li>
+							<li><a href="turismo.php">Turismo</a></li>
+							<li><a href="lojas.php">lojas</a></li>
+							<li><a href="sobre.php">sobre</a></li>
+							<li><a href="contato.php">contato</a></li>
+							<li><a href="ativos.php">ativos</a></li>
+							<li><a href="login.php">login</a></li>
 						</ul>
 					</nav>
 				</div>
@@ -47,7 +49,7 @@
 					<li><a href="">GRUTA NOSSA SENHORA DE LOURDES</a></li>
 					
 				</ul>
-				<a href="turismo.html" class="botao">Ver todos &raquo;</a>
+				<a href="turismo.php" class="botao">Ver todos &raquo;</a>
 			</div>
 			<div class="coluna col9">
 				<h2 style="text-align: center;">O QUE ESTÁ ROLANDO</h2>
