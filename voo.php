@@ -36,14 +36,17 @@
 	<div class="linha">
 		<section>
 			<div class="coluna col8">
-				<h1>Mirante do Morro da Cruz</h1>
-            <img class="card-image" src="img/mirante.jpg" alt="Imagem do Mirante do Morro da Cruz">
+				<h1>VOO LIVRE</h1>
+            <img class="card-image" src="img/voo.jpeg" alt="Imagem do voo livre">
             <div class="content">
-                <h2>Sobre o Mirante</h2>
+                <h2>Sobre o voo livre</h2>
                 <p>
-                    O Mirante do Morro da Cruz é um dos pontos turísticos mais procurados de Saquarema. 
-                    Localizado em uma região de fácil acesso, oferece uma vista incrível da Lagoa de Saquarema 
-                    e do litoral, tornando-se o local perfeito para apreciar o pôr-do-sol ou tirar fotografias.
+                    
+							A rampa de voo livre de Pepê, situada a uma altitude de 750 metros
+							do nível do mar e localizada no distrito de Sampaio Corrêa, 
+							]atrai um grande número de adeptos da modalidade, 
+							tendo em vista o bom naipe de atrações proporcionado por 
+							magnífica visão da serra, do mar e das lagoas. 
                 </p>
                 <p>
                     Além da paisagem, o local proporciona uma sensação de tranquilidade e conexão com a natureza, 

@@ -34,14 +34,14 @@
 	<div class="linha">
 		<section>
 			<div class="coluna col8">
-				<h1>Mirante do Morro da Cruz</h1>
-            <img class="card-image" src="img/mirante.jpg" alt="Imagem do Mirante do Morro da Cruz">
+				<h1>GRUTA NOSSA SENHORA DE LOURDES</h1>
+            <img class="card-image" src="img/grutansl.jpg" alt="Imagem do gruta nossa senhora de lourdes">
             <div class="content">
-                <h2>Sobre o Mirante</h2>
+                <h2>Sobre a Gruta N.S. Lourdes</h2>
                 <p>
-                    O Mirante do Morro da Cruz é um dos pontos turísticos mais procurados de Saquarema. 
-                    Localizado em uma região de fácil acesso, oferece uma vista incrível da Lagoa de Saquarema 
-                    e do litoral, tornando-se o local perfeito para apreciar o pôr-do-sol ou tirar fotografias.
+				A imagem da Santa, localizada na gruta próxima à 
+							Igreja de Nossa Senhora de Nazareth, bem como sua proximidade com o mar, 
+							formam um conjunto arquitetônico-religioso deslumbrante.
                 </p>
                 <p>
                     Além da paisagem, o local proporciona uma sensação de tranquilidade e conexão com a natureza, 

@@ -35,14 +35,14 @@
 	<div class="linha">
 		<section>
 			<div class="coluna col8">
-				<h1>Mirante do Morro da Cruz</h1>
-            <img class="card-image" src="img/mirante.jpg" alt="Imagem do Mirante do Morro da Cruz">
+				<h1>SAMBAQUIS</h1>
+            <img class="card-image" src="img/sambaquis.jpeg" alt="Imagem do sambaquis">
             <div class="content">
-                <h2>Sobre o Mirante</h2>
+                <h2>Sobre o Sambaquis</h2>
                 <p>
-                    O Mirante do Morro da Cruz é um dos pontos turísticos mais procurados de Saquarema. 
-                    Localizado em uma região de fácil acesso, oferece uma vista incrível da Lagoa de Saquarema 
-                    e do litoral, tornando-se o local perfeito para apreciar o pôr-do-sol ou tirar fotografias.
+				Sítio arqueológico é um local onde são encontrados evidências de culturas passadas.
+						O sítio arqueológico de ocupação litorânea característico da região de Saquarema é o sambaqui.
+						Os sambaquis são “Bens Nacionais”, protegidos pela Lei Federal 3924 de 26 de julho de 1961.
                 </p>
                 <p>
                     Além da paisagem, o local proporciona uma sensação de tranquilidade e conexão com a natureza, 

@@ -36,14 +36,14 @@
 	<div class="linha">
 		<section>
 			<div class="coluna col8">
-				<h1>Mirante do Morro da Cruz</h1>
-            <img class="card-image" src="img/mirante.jpg" alt="Imagem do Mirante do Morro da Cruz">
+				<h1>IGREJA NOSSA SENHORA DE NAZARETH</h1>
+            <img class="card-image" src="img/igrejansn.jpeg" alt="Imagem da igreja nossa senhora de nazareth">
             <div class="content">
-                <h2>Sobre o Mirante</h2>
+                <h2>Sobre a Igreja</h2>
                 <p>
-                    O Mirante do Morro da Cruz é um dos pontos turísticos mais procurados de Saquarema. 
-                    Localizado em uma região de fácil acesso, oferece uma vista incrível da Lagoa de Saquarema 
-                    e do litoral, tornando-se o local perfeito para apreciar o pôr-do-sol ou tirar fotografias.
+						A Igreja de Nossa Senhora de Nazareth foi originalmente construída em 1662,
+						passou por reformas em 1820 e é uma das construções mais 
+						antigas da região de Saquarema, na região litorânea do Rio de Janeiro.
                 </p>
                 <p>
                     Além da paisagem, o local proporciona uma sensação de tranquilidade e conexão com a natureza, 
@@ -56,7 +56,7 @@
                     <li>Excelente ponto para observar o pôr-do-sol.</li>
                 </ul>
                 <p>
-                    Não deixe de visitar o Mirante em sua próxima passagem por Saquarema e aproveitar o cenário único que ele oferece.
+                    Não deixe de visitar a Igreja de Nossa Senhora de Nazareth em sua próxima passagem por Saquarema e aproveitar o cenário único que ele oferece.
                 </p>
             </div>
 				
