@@ -1,5 +1,4 @@
 <?php include 'header.php'; ?>
-
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -36,14 +35,14 @@
 	<div class="linha">
 		<section>
 			<div class="coluna col8">
-				<h1>CACHOEIRA VEU DA NOIVA</h1>
-            <img class="card-image" src="img/veu.jpeg" alt="Imagem da cachoeira veu da noiva">
+				<h1>Mirante do Morro da Cruz</h1>
+            <img class="card-image" src="img/mirante.jpg" alt="Imagem do Mirante do Morro da Cruz">
             <div class="content">
-                <h2>Sobre a Cachoeira Veu da Noiva</h2>
+                <h2>Sobre o Mirante</h2>
                 <p>
-                    
-				A cachoeira Veú das Noivas, localizada na Serra do Roncador, 
-				atrai muitos visitantes por sua beleza.
+                    O Mirante do Morro da Cruz é um dos pontos turísticos mais procurados de Saquarema. 
+                    Localizado em uma região de fácil acesso, oferece uma vista incrível da Lagoa de Saquarema 
+                    e do litoral, tornando-se o local perfeito para apreciar o pôr-do-sol ou tirar fotografias.
                 </p>
                 <p>
                     Além da paisagem, o local proporciona uma sensação de tranquilidade e conexão com a natureza, 

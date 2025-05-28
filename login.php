@@ -15,13 +15,14 @@
 			<?php echo $_GET['msgErro']; ?>
 		  </div>
 		<?php } ?>
-  
+
 		<?php if (!empty($_GET['msgSucesso'])) { ?>
 		  <div class="alert alert-success" role="alert">
 			<?php echo $_GET['msgSucesso']; ?>
 		  </div>
 		<?php } ?>
-	  </div>
+	</div>
+
 	<div class="header">
 		<div class="linha">
 			<header>
@@ -44,31 +45,32 @@
 			</header>
 		</div>
 	</div>
+
 	<div class="linha">
 		<section>
 			<div class="coluna col4 sidebar">
-			<!--processa_login-->
+				<!-- espaço reservado -->
 			</div>
-			<!--<div class="coluna col8">-->
-				<div class="login-container">
-					<h1>Login</h1>
 
-					<form action="teste.php" method="post">
-						<label for="username">E-mail:</label>
-						<input type="text" id="username" name="username">
-			
-						<label for="password">Senha:</label>
-						<input type="password" id="password" name="password">
-			
-						<div class="button-container">
-							<input type="submit" value="Entrar">
-							<a href="cadastro.php" class="button">Cadastrar</a>
-						</div>
+			<div class="login-container">
+				<h1>Login</h1>
 
-			<!--</div>-->
+				<form action="processa_login.php" method="post">
+					<label for="email">E-mail:</label>
+					<input type="email" id="email" name="email" required>
+
+					<label for="senha">Senha:</label>
+					<input type="password" id="password" name="senha" required>
+
+					<div class="button-container">
+						<input type="submit" value="Entrar">
+						<a href="cadastro.php" class="button">Cadastrar</a>
+					</div>
+				</form>
+			</div>
 		</section>
 	</div>
-	
+
 	<footer>
 		<div id="footer_content">
 			<div id="footer_contacts">
@@ -79,56 +81,35 @@
 					<a href="#" class="footer-link" id="instagram">
 						<i class="fa-brands fa-instagram"></i>
 					</a>
-
 					<a href="#" class="footer-link" id="facebook">
 						<i class="fa-brands fa-facebook-f"></i>
 					</a>
-
 					<a href="#" class="footer-link" id="whatsapp">
 						<i class="fa-brands fa-whatsapp"></i>
 					</a>
 				</div>
 			</div>
-			
+
 			<ul class="footer-list">
-				<li>
-					<h3>Blog</h3>
-				</li>
-				<li>
-					<a href="#" class="footer-link">Tech</a>
-				</li>
-				<li>
-					<a href="#" class="footer-link">Adventures</a>
-				</li>
-				<li>
-					<a href="#" class="footer-link">Music</a>
-				</li>
+				<li><h3>Blog</h3></li>
+				<li><a href="#" class="footer-link">Tech</a></li>
+				<li><a href="#" class="footer-link">Adventures</a></li>
+				<li><a href="#" class="footer-link">Music</a></li>
 			</ul>
 
 			<ul class="footer-list">
-				<li>
-					<h3>Products</h3>
-				</li>
-				<li>
-					<a href="#" class="footer-link">App</a>
-				</li>
-				<li>
-					<a href="#" class="footer-link">Desktop</a>
-				</li>
-				<li>
-					<a href="#" class="footer-link">Mapa</a>
-				</li>
+				<li><h3>Products</h3></li>
+				<li><a href="#" class="footer-link">App</a></li>
+				<li><a href="#" class="footer-link">Desktop</a></li>
+				<li><a href="#" class="footer-link">Mapa</a></li>
 			</ul>
 
 			<div id="footer_subscribe">
 				<h3>Subscribe</h3>
-
-				<p>
-					Digite seu e-mail para ser notificado sobre nossas soluções de notícias
-				</p>
-
+				<p>Digite seu e-mail para ser notificado sobre nossas soluções de notícias</p>
 				<div id="input_group">
-					<input type="email" placeholder="Digite... " id="email">
+					<!-- corrigido ID duplicado -->
+					<input type="email" placeholder="Digite..." id="email_subscribe">
 					<button>
 						<i class="fa-regular fa-envelope"></i>
 					</button>
@@ -137,8 +118,7 @@
 		</div>
 
 		<div id="footer_copyright">
-			&#169
-			2023 - All In Saqua
+			&#169 2023 - All In Saqua
 		</div>
 	</footer>
 </body>

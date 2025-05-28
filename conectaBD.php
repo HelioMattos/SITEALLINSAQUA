@@ -1,26 +1,14 @@
 <?php
-// endereco
-// nome do BD
-// usuario
-// senha
+class Conexao {
+    public static function getConexao(): PDO {
+        $host = "localhost";
+        $db = "turismo";
+        $user = "turismo_user";
+        $pass = "Turismo@123";
 
-$endereco = 'localhost';
-$banco = 'allin';
-$usuario = 'postgres';
-$senha = 'toor';
-
-try {
-  // sgbd:host;port;dbname
-  // usuario
-  // senha
-  // errmode
-  $pdo = new PDO("pgsql:host=$endereco;port=5432;dbname=$banco", $usuario, $senha, [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]);
-
-  //echo "Conectado no banco de dados!!!";
-
-} catch (PDOException $e) {
-  echo "Falha ao conectar ao banco de dados. <br/>";
-  die($e->getMessage());
+        return new PDO("mysql:host=$host;dbname=$db;charset=utf8", $user, $pass, [
+            PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
+        ]);
+    }
 }
-
 ?>

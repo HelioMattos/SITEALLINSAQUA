@@ -39,55 +39,47 @@
 					<div class="pacotes-cards">
 						<div class="card">
 							<img class="card-image" src="img/padariap.jpg" alt="Padaria da Ponte">
-							<h3>Padaria da ponte</h3>
+							<h3>Hambúrguer Artesanal</h3>
 							<p>Pão artesanal, carne bovina suculenta, alface, tomate, queijo e molho especial.</p>
-							<a href="https://www.instagram.com/padariadaponte/" target="_blank">Acesse nosso Instagran</a>
 						</div>
 			
 						<!-- Item 2 -->
 						<div class="card">
 							<img class="card-image" src="img/drogariaa.jpg" alt="Drogarias Alexandre">
 							<h3>Drogarias Alexandre</h3>
-							<p>Aqui você encontra tudo mais barato</p>
-							<a href="https://drogariasalexandre.com.br/" target="_blank">Acesse nosso site</a>
+							<p>Massa crocante, calabresa defumada, cebola e bastante queijo.</p>
 	
 						</div>
 			
 						<!-- Item 3 -->
 						<div class="card">
-							<img class="card-image" src="img/ncores.jpeg" alt="Ncores Tintas">
-							<h3>Ncores Tintas</h3>
-							<p>Onde comprar e mais barato.</p>
-							<br>
-							<a href="https://www.ncores.com.br/" target="_blank">Acesse nosso site</a>
+							<img class="card-image" src="img/pastel.jpg" alt="Pastel de Carne">
+							<h3>Pastel de Carne</h3>
+							<p>Pastel recheado com carne temperada, frito na hora e crocante.</p>
 							
 						</div>
 			
 						<!-- Item 4 -->
 						<div class="card">
-
-							<img class="card-image" src="img/seianglo.jpeg" alt="SEI ANGLO">
-							<h3>SEI ANGLO</h3>
-							<p>Educação que prepara o aluno para os principais vestibulares e também para a vida</p>
-							<a href="https://seianglosaquarema.com.br/" target="_blank">Acesse nosso site</a>
+							<img class="card-image" src="img/açaí.jpg" alt="Açaí na Tigela">
+							<h3>Açaí na Tigela</h3>
+							<p>Açaí puro com granola, banana e mel. Refrescante e delicioso!</p>
 							
 						</div>
 			
 						<!-- Item 5 -->
 						<div class="card">
-							<img class="card-image" src="img/saquasuco.jpg" alt="Suco Natural de Laranja">
-							<h3>SAQUA SUCO</h3>
+							<img class="card-image" src="img/suco.jpg" alt="Suco Natural de Laranja">
+							<h3>Suco Natural de Laranja</h3>
 							<p>Suco fresco feito com laranjas selecionadas. Perfeito para acompanhar sua refeição.</p>
-							<a href="https://www.instagram.com/restaurantesaquasuco/" target="_blank">Acesse nosso Instagran</a>
 							
 						</div>
 
 						<!-- Item 6 -->
 						<div class="card">
-							<img class="card-image" src="img/estrelagrill.jpg" alt="ESTRELA GRILL">
-							<h3>RESTAURANTE ESTRELA GRILL</h3>
+							<img class="card-image" src="img/açaí.jpg" alt="Açaí na Tigela">
+							<h3>Açaí na Tigela</h3>
 							<p>Açaí puro com granola, banana e mel. Refrescante e delicioso!</p>
-							<a href="https://www.instagram.com/estrelagrillchurrascaria_/" target="_blank">Acesse nosso Instagran</a>
 							
 						</div>
 

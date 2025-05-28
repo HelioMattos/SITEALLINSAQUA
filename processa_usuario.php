@@ -1,50 +1,45 @@
 <?php
-require_once 'conectaBD.php';
-// Definir o BD (e a tabela)
-// Conectar ao BD (com o PHP)
+// Ativa exibição de erros (bom para depurar)
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 
-/*
-echo '<pre>';
-print_r($_POST);
-echo '</pre>';
-*/
+// Importa a classe Usuario (ela precisa estar no arquivo Usuario.php)
+require_once "Usuario.php";
 
-if (!empty($_POST)) {
-  // Está chegando dados por POST e então posso tentar inserir no banco
-  // Obter as informações do formulário ($_POST)
-  try {
-    // Preparar as informações
-      // Montar a SQL (pgsql)
-      $sql = "INSERT INTO clientes
-                (nome, email, telefone, senha)
-              VALUES
-                (:nome, :email, :telefone, :senha)";
+// Verifica se o formulário foi enviado via POST
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Pega os dados do formulário com segurança
+    $nome = $_POST['nome'] ?? '';
+    $email = $_POST['email'] ?? '';
+    $telefone = $_POST['telefone'] ?? '';
+    $senha = $_POST['senha'] ?? '';
 
-      // Preparar a SQL (pdo)
-      $stmt = $pdo->prepare($sql);
+    // Validação simples (você pode melhorar)
+    if (empty($nome) || empty($email) || empty($senha)) {
+        echo "Por favor, preencha todos os campos obrigatórios.";
+        exit;
+    }
 
-      // Definir/organizar os dados p/ SQL
-      $dados = array(
-        ':nome' => $_POST['nome'],
-        ':telefone' => $_POST['telefone'],
-        ':email' => $_POST['email'],
-        ':senha' => md5($_POST['senha'])
-      );
+    // Criptografa a senha
+    $senhaHash = password_hash($senha, PASSWORD_DEFAULT);
 
-      // Tentar Executar a SQL (INSERT)
-      // Realizar a inserção das informações no BD (com o PHP)
-      if ($stmt->execute($dados)) {
-        header("Location: login.php?msgSucesso=Cadastro realizado com sucesso!");
-      }
-  } catch (PDOException $e) {
-      //die($e->getMessage());
-      header("Location: login.php?msgErro=Falha ao cadastrar...");
-  }
+    // Verifica se já existe um usuário com esse e-mail
+    if (Usuario::buscarPorEmail($email)) {
+        echo "E-mail já cadastrado!";
+    } else {
+        // Tenta salvar o usuário
+        if (Usuario::salvarUsuario($nome, $email, $telefone, $senhaHash)) {
+            echo "Usuário cadastrado com sucesso!";
+            // Redireciona após 3 segundos (opcional)
+            header("refresh:3;url=login.php");
+        } else {
+            echo "Erro ao cadastrar o usuário.";
+        }
+    }
+} else {
+    echo "Acesso inválido.";
 }
-else {
-  header("Location: login.php?msgErro=Erro de acesso.");
-}
-die();
+?>
 
-// Redirecionar para a página inicial (login) c/ mensagem erro/sucesso
- ?>
+

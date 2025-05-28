@@ -1,3 +1,33 @@
+<?php
+// Conexão com banco de dados
+$host = "localhost";
+$user = "turismo_user";
+$pass = "Turismo@123";
+$db = "turismo";
+
+$conn = new mysqli($host, $user, $pass, $db);
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $titulo = $_POST['titulo'];
+    $descricao = $_POST['descricao'];
+    $preco = $_POST['preco'];
+    $imagem = $_POST['imagem'];
+
+    $sql = "INSERT INTO pacotes (titulo, descricao, preco, imagem) VALUES (?, ?, ?, ?)";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("ssds", $titulo, $descricao, $preco, $imagem);
+
+    if ($stmt->execute()) {
+        echo "<p>Pacote cadastrado com sucesso!</p>";
+    } else {
+        echo "<p>Erro: " . $stmt->error . "</p>";
+    }
+
+    $stmt->close();
+}
+?>
+
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -20,10 +50,11 @@
 						<ul class="menu inline sem-marcador">
 							<li><a href="index.php">home</a></li>
 							<li><a href="turismo.php">turismo</a></li>
-							<li><a href="servicos.php">serviços</a></li>
+							<li><a href="lojas.php">lojas</a></li>
 							<li><a href="sobre.php">sobre</a></li>
 							<li><a href="contato.php">contato</a></li>
 							<li><a href="ativos.php">ativos</a></li>
+							<li><a href="cadastro_ponto_turistico.php">Cadastrar pontos Turistico </a></li>
 							<li><a href="login.php">login</a></li>
 						</ul>
 					</nav>
@@ -33,32 +64,32 @@
 	</div>
 	<div class="linha">
 		<section>
-			<div class="coluna col8">
-				<h1>Mirante do Morro da Cruz</h1>
-            <img class="card-image" src="img/mirante.jpg" alt="Imagem do Mirante do Morro da Cruz">
-            <div class="content">
-                <h2>Sobre o Mirante</h2>
-                <p>
-                    O Mirante do Morro da Cruz é um dos pontos turísticos mais procurados de Saquarema. 
-                    Localizado em uma região de fácil acesso, oferece uma vista incrível da Lagoa de Saquarema 
-                    e do litoral, tornando-se o local perfeito para apreciar o pôr-do-sol ou tirar fotografias.
-                </p>
-                <p>
-                    Além da paisagem, o local proporciona uma sensação de tranquilidade e conexão com a natureza, 
-                    sendo ideal para visitantes que buscam relaxamento e um contato mais próximo com o meio ambiente.
-                </p>
-                <h2>O que esperar</h2>
-                <ul>
-                    <li>Vista panorâmica da Lagoa de Saquarema e do oceano.</li>
-                    <li>Local ideal para fotos e filmagens.</li>
-                    <li>Excelente ponto para observar o pôr-do-sol.</li>
-                </ul>
-                <p>
-                    Não deixe de visitar o Mirante em sua próxima passagem por Saquarema e aproveitar o cenário único que ele oferece.
-                </p>
-            </div>
+			<div class="cad-body">
 				
-				
+			</div>
+			<div class="cad-body">
+
+				<h1 class="cad-h1">Cadastro de Ponto Turisticos</h1>
+                
+                <form method="POST" action="" class="cad-form">
+                
+                    <label class="cad-label">Título:</label>
+                    <input type="text" name="titulo" class="cad-input" required>
+
+                    <label class="cad-label">Descrição:</label>
+                    <textarea name="descricao" required></textarea>
+
+                    <label class="cad-label">Preço:</label>
+                    <input type="text" name="preco" class="cad-input" required>
+
+                    <label class="cad-label">URL da Imagem:</label>
+                    <input type="text" name="imagem" class="cad-input" required>
+
+                    <input class="cad-input-submit" type="submit" value="Cadastrar">
+
+                    <a href="login.php">
+
+			    </form>
 			</div>
 		</section>
 	</div>

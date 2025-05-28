@@ -43,10 +43,10 @@
 				<h3>Mais Procurados</h3>
 				<ul class="sem-marcador sem-padding">
 					<li><a href="">FLIS 2023</a></li>
-					<li><a href="igreja.php">IGREJA NOSSA SENHORA DE NAZARETH</a></li>
-					<li><a href="mirante.php">MIRANTE DO MORRO DA CRUZ</a></li>
-					<li><a href="voo.php">RAMPA DO VOO LIVRE</a></li>
-					<li><a href="gruta.php">GRUTA NOSSA SENHORA DE LOURDES</a></li>
+					<li><a href="">IGREJA NOSSA SENHORA DE NAZARETH</a></li>
+					<li><a href="">MIRANTE DO MORRO DA CRUZ</a></li>
+					<li><a href="">RAMPA DO VOO LIVRE</a></li>
+					<li><a href="">GRUTA NOSSA SENHORA DE LOURDES</a></li>
 					
 				</ul>
 				<a href="turismo.php" class="botao">Ver todos &raquo;</a>

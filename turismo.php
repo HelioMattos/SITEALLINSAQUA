@@ -1,5 +1,11 @@
 <?php include 'header.php'; ?>
 
+<?php
+require_once "ponto_turistico.php";
+
+$pontos = PontoTuristico::listarTodos();
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -56,6 +62,23 @@
 				</div>
 			    </a>
 			  </div>
+				<?php foreach ($pontos as $ponto): ?>
+					<div class="card">
+						<img src="<?= htmlspecialchars($ponto->imagem) ?>" alt="<?= htmlspecialchars($ponto->titulo) ?>" class="card-img">
+						<h2 class="card-title"><?= htmlspecialchars($ponto->titulo) ?></h2>
+						<p class="card-desc"><?= htmlspecialchars($ponto->descricao) ?></p>
+						<p class="card-preco">Preço: R$ <?= number_format($ponto->preco, 2, ',', '.') ?></p>
+					</div>
+        		<?php endforeach; ?>
+
+
+
+
+
+
+
+
+
 
 			  <div class="pacotes-cards">
 				<div class="card">
@@ -107,7 +130,7 @@
 					<p>360°</p>
 				  </div>
 				  <div class="card-tag card-tag-bottom">
-					<p>Mirante</p>
+					<p>Miante</p>
 				  </div>
 				  <img class="card-image" src="img/mirante.jpg" alt="">
 				  <div class="card-content">
@@ -143,12 +166,15 @@
 									
 				<div class="pacotes-cards">
 					<div class="card">
-						<a href="veu.php">
 					  <div class="card-tag card-tag-top">
+						<a href="veu360.php">
 						<p>360°</p>
+						</a>
 					  </div>
 					  <div class="card-tag card-tag-bottom">
+						<a href="veu.php">
 						<p>Cachoeira Véu da Noiva</p>
+						</a>
 					  </div>
 					  <img class="card-image" src="img/veu.jpeg" alt="">
 					  <div class="card-content">
@@ -157,7 +183,6 @@
 								atrai muitos visitantes por sua beleza.
 							</h1>				  
 					  </div>
-					  </a>
 					</div>
 						
 			

@@ -132,7 +132,6 @@
 		</div>
 
 		<div id="footer_copyright">
-			&#169
 			2023 - All In Saqua
 		</div>
 	</footer>
