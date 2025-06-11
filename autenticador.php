@@ -1,50 +1,60 @@
 <?php
-require_once "Usuario.php";
+require_once "usuario.php";
 
-class Autenticador {
-    private static function iniciarSessao() {
-        if (session_status() !== PHP_SESSION_ACTIVE) {
+class Autenticador
+{
+    // Inicia a sessão apenas se ainda não estiver iniciada
+    public static function iniciarSessao()
+    {
+        if (session_status() === PHP_SESSION_NONE) {
             session_start();
         }
     }
 
-    public static function login(string $email, string $senha): bool {
+    // Tenta fazer login com e-mail e senha
+    public static function login(string $email, string $senha): bool
+    {
         self::iniciarSessao();
 
         $usuario = Usuario::buscarPorEmail($email);
 
-        if (!$usuario || !password_verify($senha, $usuario['senha'])) {
-            return false;
+        if ($usuario && password_verify($senha, $usuario['senha'])) {
+            $_SESSION['nome'] = $usuario['nome'];
+            $_SESSION['email'] = $usuario['email'];
+            return true;
         }
 
-        $_SESSION['usuario_id'] = $usuario['id'];
-        $_SESSION['usuario_nome'] = $usuario['nome'];
-        $_SESSION['usuario_email'] = $usuario['email'];
-
-        return true;
+        return false;
     }
 
-    public static function logout(): void {
+    // Verifica se o usuário está logado
+    public static function estaLogado(): bool
+    {
+        self::iniciarSessao();
+        return isset($_SESSION['nome']);
+    }
+
+    // Retorna o nome do usuário logado
+    public static function getNome(): string
+    {
+        self::iniciarSessao();
+        return $_SESSION['nome'] ?? '';
+    }
+
+    // Encerra a sessão (logout)
+    public static function logout()
+    {
         self::iniciarSessao();
         session_unset();
         session_destroy();
     }
 
-    public static function verificar(): bool {
-        self::iniciarSessao();
-        return isset($_SESSION['usuario_id']);
-    }
-
-    public static function redirecionarSeNaoLogado(string $url = 'login.php') {
-        self::iniciarSessao();
-        if (!isset($_SESSION['usuario_id'])) {
-            header("Location: $url?msgErro=Acesso negado. Faça login primeiro.");
-            exit();
+    // Redireciona para login se não estiver logado
+    public static function redirecionarSeNaoLogado(string $url = "login.php")
+    {
+        if (!self::estaLogado()) {
+            header("Location: $url");
+            exit;
         }
-    }
-
-    public static function getNome(): string {
-        self::iniciarSessao();
-        return $_SESSION['usuario_nome'] ?? 'Usuário';
     }
 }

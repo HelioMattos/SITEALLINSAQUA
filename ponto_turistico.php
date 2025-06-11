@@ -2,32 +2,56 @@
 require_once "conectaBD.php";
 
 class PontoTuristico {
-    public int $id;
     public string $titulo;
     public string $descricao;
-    public float $preco;
-    public string $imagem;
-    public string $criado_em;
+    public string $sobre;
+    public string $imagem_tipo = '';
+    public string $imagem_blob = '';
+
+    public function cadastrar(): bool {
+        $pdo = Conexao::getConexao();
+        $sql = "INSERT INTO pacotes (titulo, descricao, sobre, imagem, imagem_tipo) VALUES (?, ?, ?, ?, ?)";
+        $stmt = $pdo->prepare($sql);
+        return $stmt->execute([
+            $this->titulo,
+            $this->descricao,
+            $this->sobre,
+            $this->imagem_blob,
+            $this->imagem_tipo
+        ]);
+    }
 
     public static function listarTodos(): array {
         $pdo = Conexao::getConexao();
-        $sql = "SELECT * FROM pacotes ORDER BY criado_em DESC";
+        $stmt = $pdo->query("SELECT * FROM pacotes ORDER BY criado_em DESC");
+        return $stmt->fetchAll(PDO::FETCH_OBJ);
+    }
+
+    public static function buscarPorId(int $id): ?object {
+        $pdo = Conexao::getConexao();
+        $stmt = $pdo->prepare("SELECT * FROM pacotes WHERE id = ?");
+        $stmt->execute([$id]);
+        return $stmt->fetch(PDO::FETCH_OBJ) ?: null;
+    }
+
+    public function atualizar(int $id): bool {
+        $pdo = Conexao::getConexao();
+        $sql = "UPDATE pacotes SET titulo = ?, descricao = ?, sobre = ? WHERE id = ?";
         $stmt = $pdo->prepare($sql);
-        $stmt->execute();
+        return $stmt->execute([$this->titulo, $this->descricao, $this->sobre, $id]);
+    }
 
-        $pontos = [];
-        while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-            $ponto = new PontoTuristico();
-            $ponto->id = $row['id'];
-            $ponto->titulo = $row['titulo'];
-            $ponto->descricao = $row['descricao'];
-            $ponto->preco = $row['preco'];
-            $ponto->imagem = $row['imagem'];
-            $ponto->criado_em = $row['criado_em'];
-            $pontos[] = $ponto;
-        }
+    public static function excluir(int $id): bool {
+        $pdo = Conexao::getConexao();
+        $stmt = $pdo->prepare("DELETE FROM pacotes WHERE id = ?");
+        return $stmt->execute([$id]);
+    }
 
-        return $pontos;
+
+    public static function buscarPorLink(string $link): ?object {
+        $pdo = Conexao::getConexao();
+        $stmt = $pdo->prepare("SELECT * FROM pacotes WHERE link = ?");
+        $stmt->execute([$link]);
+        return $stmt->fetch(PDO::FETCH_OBJ) ?: null;
     }
 }
-?>

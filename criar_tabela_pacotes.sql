@@ -18,10 +18,12 @@ DROP TABLE IF EXISTS pacotes;
 
 CREATE TABLE pacotes (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    titulo VARCHAR(255) NOT NULL,
-    descricao TEXT NOT NULL,
-    preco DECIMAL(10,2) NOT NULL,
-    imagem VARCHAR(500) NOT NULL,
+    titulo VARCHAR(60) NOT NULL,
+    descricao VARCHAR(190) NOT NULL,
+    sobre TEXT NOT NULL,
+    link VARCHAR(250),
+    imagem LONGBLOB, -- armazena o conteúdo binário
+    imagem_tipo VARCHAR(50), -- armazena o tipo MIME
     criado_em TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 

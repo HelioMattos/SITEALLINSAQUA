@@ -1,7 +1,15 @@
-<?php include 'header.php'; ?>
-
 <?php
+require_once "ponto_turistico.php";
 require_once "autenticador.php";
+Autenticador::redirecionarSeNaoLogado();
+
+$id = $_GET['id'] ?? null;
+$ponto = PontoTuristico::buscarPorId($id);
+
+if (!$ponto) {
+    echo "Ponto não encontrado.";
+    exit;
+}
 ?>
 
 <!DOCTYPE html>
@@ -41,54 +49,40 @@ require_once "autenticador.php";
 			</header>
 		</div>
 	</div>
-	<div class="linha">	
-		<!-- Produtos -->
-		<section class="product-section">
-			<h2>Selecione um Produto</h2>
-			<div class="products">
-				<div class="product">
-					<img src="img/p1.jpg" alt="Pao em geral">
-					<h3>Pao em geral</h3>
-					<p>Delicioso paes com ingredientes frescos.</p>
-					<p class="price">R$ 29,90</p>
-					<select>
-						<option value="1">Quantidade: 1</option>
-						<option value="2">Quantidade: 2</option>
-						<option value="3">Quantidade: 3</option>
-					</select>
-				</div>
-	
-				<div class="product">
-					<img src="img/rivotril.jpg" alt="Rivotril">
-					<h3>Rivotril</h3>
-					<p>Leves doses para acalmar</p>
-					<p class="price">R$ 39,90</p>
-					<select>
-						<option value="1">Quantidade: 1</option>
-						<option value="2">Quantidade: 2</option>
-						<option value="3">Quantidade: 3</option>
-					</select>
-				</div>
+	<div class="linha">
+		<section>
+			<div class="cad-body">
+				
 			</div>
-		</section>
-	
-		<!-- Pagamento com Criptomoedas -->
-		<section class="payment-section">
-			<h2>Escolha a Criptomoeda para Pagamento</h2>
-			<div class="payment-form">
-				<h3>Selecione a Moeda</h3>
-				<label for="crypto">Criptoativo:</label>
-				<select id="crypto">
-					<option value="btc">Bitcoin (BTC)</option>
-					<option value="eth">Ethereum (ETH)</option>
-					<option value="ltc">Litecoin (LTC)</option>
-				</select>
-	
-				<h3>Resumo do Pagamento</h3>
-				<p class="total">Total em Reais: <span id="total-brl">R$ 69,80</span></p>
-				<p class="total">Total em Cripto: <span class="crypto-price">0.00123 BTC</span></p>
-	
-				<button>Finalizar Pagamento</button>
+			<div class="cad-body">
+				
+				<h2>Editar ponto: <?= htmlspecialchars($ponto->titulo) ?></h2>
+
+				<form method="POST" action="salvar_edicao.php" enctype="multipart/form-data">
+					<input type="hidden" name="id" value="<?= $ponto->id ?>">
+
+					<label>Título:</label><br>
+					<input type="text" name="titulo" value="<?= htmlspecialchars($ponto->titulo) ?>" required><br>
+
+					<label>Descrição:</label><br>
+					<textarea name="descricao" required><?= htmlspecialchars($ponto->descricao) ?></textarea><br>
+
+					<label>Sobre:</label><br>
+					<input type="text" name="sobre" value="<?= htmlspecialchars($ponto->sobre) ?>" required><br>
+
+					<label>Imagem atual:</label><br>
+					<?php if (!empty($ponto->imagem)): ?>
+						<img src="data:<?= $ponto->imagem_tipo ?>;base64,<?= base64_encode($ponto->imagem) ?>" width="150"><br>
+					<?php else: ?>
+						<p>Sem imagem cadastrada.</p>
+					<?php endif; ?>
+
+					<label>Nova imagem (opcional):</label><br>
+					<input type="file" name="nova_imagem" accept="image/*"><br><br>
+
+					<input type="submit" value="Salvar alterações">
+				</form>
+			
 			</div>
 		</section>
 	</div>

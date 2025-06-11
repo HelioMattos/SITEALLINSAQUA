@@ -1,5 +1,9 @@
 <?php include 'header.php'; ?>
 
+<?php
+require_once "autenticador.php";
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -26,7 +30,11 @@
 							<li><a href="sobre.php">sobre</a></li>
 							<li><a href="contato.php">contato</a></li>
 							<li><a href="ativos.php">ativos</a></li>
-							<li><a href="login.php">login</a></li>
+							<?php if (Autenticador::estaLogado()): ?>
+								<li><a href="login_logado.php">Perfil</a></li>
+							<?php else: ?>
+								<li><a href="login.php">login</a></li>
+							<?php endif; ?>
 						</ul>
 					</nav>
 				</div>
@@ -35,33 +43,32 @@
 	</div>
 	<div class="linha">
 		<section>
-			<div class="coluna col8">
-				<h1>Mirante do Morro da Cruz</h1>
-            <img class="card-image" src="img/mirante.jpg" alt="Imagem do Mirante do Morro da Cruz">
-            <div class="content">
-                <h2>Sobre o Mirante</h2>
-                <p>
-                    O Mirante do Morro da Cruz é um dos pontos turísticos mais procurados de Saquarema. 
-                    Localizado em uma região de fácil acesso, oferece uma vista incrível da Lagoa de Saquarema 
-                    e do litoral, tornando-se o local perfeito para apreciar o pôr-do-sol ou tirar fotografias.
-                </p>
-                <p>
-                    Além da paisagem, o local proporciona uma sensação de tranquilidade e conexão com a natureza, 
-                    sendo ideal para visitantes que buscam relaxamento e um contato mais próximo com o meio ambiente.
-                </p>
-                <h2>O que esperar</h2>
-                <ul>
-                    <li>Vista panorâmica da Lagoa de Saquarema e do oceano.</li>
-                    <li>Local ideal para fotos e filmagens.</li>
-                    <li>Excelente ponto para observar o pôr-do-sol.</li>
-                </ul>
-                <p>
-                    Não deixe de visitar o Mirante em sua próxima passagem por Saquarema e aproveitar o cenário único que ele oferece.
-                </p>
-            </div>
-				
-				
-			</div>
+			<?php foreach ($pontos as $ponto): ?>
+				<div class="coluna col8">
+					<h1><?= htmlspecialchars($ponto->titulo) ?></h1>
+				<img src="data:<?= $ponto->imagem_tipo ?>;base64,<?= base64_encode($ponto->imagem) ?>"
+							alt="<?= htmlspecialchars($ponto->titulo) ?>" class="card-img">
+					<div class="content">
+						<h2><?= htmlspecialchars($ponto->titulo) ?></h2>
+						<p>
+							<?= htmlspecialchars($ponto->descricao) ?>
+						</p>
+						<p>
+							<?= htmlspecialchars($ponto->sobre) ?>
+						</p>
+						<h2>O que esperar</h2>
+						<ul>
+							<li>Vista panorâmica da Lagoa de Saquarema e do oceano.</li>
+							<li>Local ideal para fotos e filmagens.</li>
+							<li>Excelente ponto para observar o pôr-do-sol.</li>
+						</ul>
+						<p>
+							Não deixe de visitar o Mirante em sua próxima passagem por Saquarema e aproveitar o cenário único que ele oferece.
+						</p>
+					</div>
+					<?php endif; ?>	
+				</div>
+			<?php endforeach; ?>
 		</section>
 	</div>
 	

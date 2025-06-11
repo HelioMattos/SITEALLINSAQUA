@@ -1,5 +1,9 @@
 <?php include 'header.php'; ?>
 
+<?php
+require_once "autenticador.php";
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -30,7 +34,11 @@
 							<li><a href="sobre.php">sobre</a></li>
 							<li><a href="contato.php">contato</a></li>
 							<li><a href="ativos.php">ativos</a></li>
-							<li><a href="login.php">login</a></li>
+							<?php if (Autenticador::estaLogado()): ?>
+								<li><a href="login_logado.php">Perfil</a></li>
+							<?php else: ?>
+								<li><a href="login.php">login</a></li>
+							<?php endif; ?>
 						</ul>
 					</nav>
 				</div>

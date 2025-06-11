@@ -1,5 +1,5 @@
 <?php
 require_once "autenticador.php";
 Autenticador::logout();
-header("login.php");
+header("Location: login.php");
 exit;

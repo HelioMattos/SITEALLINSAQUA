@@ -1,0 +1,119 @@
+/* TABELA DE DADOS */
+.table-container {
+  margin: 20px auto;
+  width: 95%;
+  max-width: 1000px;
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid #ddd;
+  background-color: #fff;
+  font-family: Arial, sans-serif;
+}
+
+thead {
+  background-color: #007bff;
+  color: white;
+}
+
+th, td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+tbody tr:hover {
+  background-color: #f1f1f1;
+}
+
+/* BOTÕES DE AÇÃO */
+.btn {
+  padding: 6px 12px;
+  border: none;
+  border-radius: 5px;
+  font-size: 14px;
+  text-decoration: none;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-editar {
+  background-color: #28a745;
+  padding: 8px 16px;
+  font-size: 14px;
+  border: none;
+  border-radius: 6px;
+  text-decoration: none;
+  margin: 10px 0;
+  transition: background-color 0.3s ease;
+}
+
+.btn-editar:hover {
+  background-color: #218838;
+}
+
+.btn-excluir {
+  background-color: #dc3545;
+  padding: 8px 16px;
+  font-size: 14px;
+  border: none;
+  border-radius: 6px;
+  text-decoration: none;
+  margin: 10px 0;
+  transition: background-color 0.3s ease;
+}
+
+.btn-excluir:hover {
+  background-color: #c82333;
+}
+
+.round-image {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #ccc;
+}
+
+.btn-cadastrar {
+  background-color: #00d998;
+  color: #fff;
+  padding: 10px 20px;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  margin: 10px 0;
+  display: inline-block;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.btn-cadastrar:hover {
+  background-color: #00a573;
+}
+
+.btn-sair {
+  background-color: #d17c7c;
+  color: white;
+  padding: 8px 16px;
+  font-size: 14px;
+  border: none;
+  border-radius: 6px;
+  text-decoration: none;
+  float: right;
+  margin: 10px 0;
+  transition: background-color 0.3s ease;
+}
+
+.btn-sair:hover {
+  background-color: #d85555;
+}
+
